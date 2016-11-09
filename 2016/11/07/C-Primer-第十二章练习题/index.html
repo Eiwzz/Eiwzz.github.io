@@ -23,7 +23,7 @@
 <meta property="og:site_name" content="Ev的备忘录">
 <meta property="og:description" content="12.1.1节练习练习 12.1　　
 在此代码的结尾，b1和b2各包含多少个元素？StrBlob b1;{    StrBlob b2 = {“a”,”an”,”the”};    b1 = b2;    b2.push_back(“about”);}">
-<meta property="og:updated_time" content="2016-11-09T11:10:16.740Z">
+<meta property="og:updated_time" content="2016-11-09T14:39:44.112Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C++ Primer 第十二章练习题">
 <meta name="twitter:description" content="12.1.1节练习练习 12.1　　
@@ -168,7 +168,9 @@
 <h3 id="练习12-3"><a href="#练习12-3" class="headerlink" title="练习12.3"></a><strong>练习12.3</strong></h3><blockquote>
 <p>StrBlob需要const版本的 push_back 和 pop_back 吗？如果需要，添加进去。否则，请解释。</p>
 </blockquote>
-<p>这道题挺有意思的。从语法角度来看加了const版本的push_back 和pop_back可以通过编译并没有出现错误。但是如果从类的使用者角度来考虑这个问题,加了它们会发生神奇的事情！<br>假设我们已经定义了const版本的 push_back 。然后我们 const StrBlob wtfBlob，定义了这么一个对象。接着我们使用push_back:<br>wtfBlob.push_back(lalala);<br>从语法来看，wtfBlob是个指针常量，本身不能改变，指向的对象可以改变。而这里的push_back改变的是wtfBlob指向的对象，所以可以通过编译。<br>类的使用者并不知道StrBlob的实现细节，在他看来，wtfBlob就是一个容器。“一个const容器，竟然可以使用push_back,见鬼啦？”<br>不加入const版本，用户写 wtfBlob.push_back(lalala); 不能通过编译，恰好能起到提醒的作用。所以不需要添加进去。</p>
+<p>这道题挺有意思的。从语法角度来看加了const版本的push_back 和pop_back可以通过编译并没有出现错误。但是如果从类的使用者角度来考虑这个问题,加了它们会发生神奇的事情！<br>假设我们已经定义了const版本的 push_back 。然后我们 const StrBlob wtfBlob，定义了这么一个对象。接着我们使用push_back:<br>wtfBlob.push_back(lalala);</p>
+<p>从语法来看，wtfBlob是个指针常量，本身不能改变，指向的对象可以改变。而这里的push_back改变的是wtfBlob指向的对象，所以可以通过编译。<br>类的使用者并不知道StrBlob的实现细节，在他看来，wtfBlob就是一个容器。“一个const容器，竟然可以使用push_back,见鬼啦？”</p>
+<p>不加入const版本，用户写 wtfBlob.push_back(lalala); 不能通过编译，恰好能起到提醒的作用。所以不需要添加进去。</p>
 <h3 id="练习12-4"><a href="#练习12-4" class="headerlink" title="练习12.4"></a>练习12.4</h3><blockquote>
 <p>在 check 函数中，没有检查 i 是否大于０。为什么可以忽略这个检查？
 　　</p>
