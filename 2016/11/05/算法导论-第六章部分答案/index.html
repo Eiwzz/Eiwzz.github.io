@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-post">
+
+
+<head>
+  <meta charset="utf-8">
+  
+  <title>算法导论　第六章部分答案 | Ev的备忘录</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="CLRS," />
+  
+
+  <meta name="description" content="练习6.5-1
+试说明HEAP-EXTRACT-MAX在堆A = {15,13,9,5,12,8,7,4,0,6,2,1}上的操作过程
+
+A = {15,13,9,5,12,8,7,4,0,6,2,1}A = {1,13,9,5,12,8,7,4,0,6,2,1}A = {13,1,9,5,12,8,7,4,0,6,2,1}A = {13,12,9,5,1,8,7,4,0,6,2,1}A = {1">
+<meta property="og:type" content="article">
+<meta property="og:title" content="算法导论　第六章部分答案">
+<meta property="og:url" content="http://eiwzz.github.io/2016/11/05/算法导论-第六章部分答案/index.html">
+<meta property="og:site_name" content="Ev的备忘录">
+<meta property="og:description" content="练习6.5-1
+试说明HEAP-EXTRACT-MAX在堆A = {15,13,9,5,12,8,7,4,0,6,2,1}上的操作过程
+
+A = {15,13,9,5,12,8,7,4,0,6,2,1}A = {1,13,9,5,12,8,7,4,0,6,2,1}A = {13,1,9,5,12,8,7,4,0,6,2,1}A = {13,12,9,5,1,8,7,4,0,6,2,1}A = {1">
+<meta property="og:updated_time" content="2016-11-15T09:29:39.146Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="算法导论　第六章部分答案">
+<meta name="twitter:description" content="练习6.5-1
+试说明HEAP-EXTRACT-MAX在堆A = {15,13,9,5,12,8,7,4,0,6,2,1}上的操作过程
+
+A = {15,13,9,5,12,8,7,4,0,6,2,1}A = {1,13,9,5,12,8,7,4,0,6,2,1}A = {13,1,9,5,12,8,7,4,0,6,2,1}A = {13,12,9,5,1,8,7,4,0,6,2,1}A = {1">
+
+  
+
+  
+    <link rel="icon" href="/favicon.ico">
+  
+
+  <link href="/css/styles.css?v=028c63b1" rel="stylesheet">
+
+
+  
+    <link rel="stylesheet" href="/css/personal-style.css">
+  
+
+  
+
+  
+
+</head>
+
+<body>
+
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">盒子</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">盒子</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/tag/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/search/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#练习"><span class="toc-text">练习</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#6-5-1"><span class="toc-text">6.5-1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-5-2"><span class="toc-text">6.5-2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-5-3"><span class="toc-text">6.5-3</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-5-4"><span class="toc-text">6.5-4</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-5-6"><span class="toc-text">6.5-6</span></a></li></ol></li></ol>
+  </div>
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-算法导论-第六章部分答案" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">算法导论　第六章部分答案</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2016.11.05</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>Ev</span>
+        </span>
+      
+
+      
+
+
+      
+
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <h2 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h2><h3 id="6-5-1"><a href="#6-5-1" class="headerlink" title="6.5-1"></a>6.5-1</h3><blockquote>
+<p>试说明HEAP-EXTRACT-MAX在堆A = {15,13,9,5,12,8,7,4,0,6,2,1}上的操作过程</p>
+</blockquote>
+<p>A = {15,13,9,5,12,8,7,4,0,6,2,1}<br>A = {1,13,9,5,12,8,7,4,0,6,2,1}<br>A = {13,1,9,5,12,8,7,4,0,6,2,1}<br>A = {13,12,9,5,1,8,7,4,0,6,2,1}<br>A = {13,12,9,5,6,8,7,4,0,1,2,1}  </p>
+<h3 id="6-5-2"><a href="#6-5-2" class="headerlink" title="6.5-2"></a>6.5-2</h3><blockquote>
+<p>试说明MAX-HEAP-INSERT(A,10)在堆A = {15,13,9,5,12,8,7,4,0,6,2,1}上的操作过程</p>
+</blockquote>
+<p>A = {15,13,9,5,12,8,7,4,0,6,2,1}<br>A = {15,13,9,5,12,8,7,4,0,6,2,1,-2147483647}<br>A = {15,13,9,5,12,8,7,4,0,6,2,1,10}<br>A = {15,13,9,5,12,10,7,4,0,6,2,1,8}<br>A = {15,13,10,5,12,9,7,4,0,6,2,1,8}  </p>
+<h3 id="6-5-3"><a href="#6-5-3" class="headerlink" title="6.5-3"></a>6.5-3</h3><blockquote>
+<p>要求用最小堆实现最小优先队列，请写出HEAP-MINIMUM、HEAP-EXTRACT-MIN、HEAP-DECREASE-KEY和MIN-HEAP-INSERT的伪代码。</p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//HEAP-MINIMUM(A)</span></div><div class="line"><span class="keyword">return</span> A[<span class="number">1</span>]</div></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//HEAP-EXTRACT-MIN(A)</span></div><div class="line"><span class="keyword">if</span> A.heap-size &lt; <span class="number">1</span></div><div class="line">	error <span class="string">"heap underflow"</span></div><div class="line">    </div><div class="line">min = A[<span class="number">1</span>]</div><div class="line">A[<span class="number">1</span>] = A[A.heap-size]</div><div class="line">A.heap-size = A.heap-size - <span class="number">1</span></div><div class="line">MIN-HEAPIFY(A,<span class="number">1</span>)</div><div class="line">	    </div><div class="line"><span class="keyword">return</span> min</div></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">//HEAP-DECREASE-KEY(A,key)</div><div class="line">if A(i) &lt; key </div><div class="line">	error "new key is bigger than current key"</div><div class="line">		    	</div><div class="line">A[i] = key</div><div class="line">while i &gt; 1 and A[PARENT(i)] &gt; A[i]</div><div class="line">	exchange A[i] with A[PARENT(i)]</div><div class="line">	i = PARENT[i]</div></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//MIN-HEAP-INSERT(A,i,key) </span></div><div class="line">A.heap-size = A.heap-size + <span class="number">1</span></div><div class="line">A[A.heap-size] = -∞</div><div class="line">HEAP-INCREASE-KEY(A,A.heap-size,key)</div></pre></td></tr></table></figure>
+<h3 id="6-5-4"><a href="#6-5-4" class="headerlink" title="6.5-4"></a>6.5-4</h3><blockquote>
+<p>在MAX-HEAP-INSERT中，为什么把最后一个元素的关键字设为-∞ ，然后又将其增加到所需的值？</p>
+</blockquote>
+<p>要想插入成功，这个key必须大于原来的值。</p>
+<h3 id="6-5-6"><a href="#6-5-6" class="headerlink" title="6.5-6"></a>6.5-6</h3><blockquote>
+<p>在HEAP-INCREASE-KEY的第五行的交换操作中，一般需要通过三次赋值来完成。想一想如何利用INSERTION-SORT内循环部分的思想，只用一次赋值就完成这一交换操作？</p>
+</blockquote>
+<p>   　　　<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">//HEAP-INCREASE-KEY(A,key)</div><div class="line">if A(i) &gt; key </div><div class="line">	error "new key is smaller than current key"</div><div class="line">		    	</div><div class="line">A[i] = key</div><div class="line">while i &gt; 1 and A[PARENT(i)] &lt; A[i]</div><div class="line">	A[i] = A[PARENT(i)]</div><div class="line">	i = PARENT(i)</div><div class="line">A[i] = key</div></pre></td></tr></table></figure></p>
+
+    
+  </div>
+</article>
+
+</div>
+
+
+  <div class="text-center donation">
+    <div class="inner-donation">
+      <span class="btn-donation">支持一下</span>
+      <div class="donation-body">
+        <div class="tip text-center">扫一扫，支持Ev</div>
+        <ul class="theme.donation.items.length">
+        
+          <li class="item">
+            <img src="/images/egg.jpg" alt="">
+          </li>
+        
+          <li class="item">
+            <img src="/images/egg.jpg" alt="">
+          </li>
+        
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/tag/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/search/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              搜索
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+
+    
+
+
+
+
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235683', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>
